@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container-fluid mt-5 text-center">
+    <h3 class="fw-bold">{{m}}</h3>
+    <h5 class="text-success">Thank You...</h5>
+    <button class="btn btn-danger" style="font-color:black;"><a href="{% url 'shop:allcat' %}">Continue Shopping</a></button>
+
+</div>
+
+
+{% endblock %}

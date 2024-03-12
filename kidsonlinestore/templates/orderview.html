@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h3 style="text-align:center;font-weight:bold;">Order Details</h3>
+<div class="container">
+    <h2 class="text-center">Name of Customer:{{user}}</h2>
+    <div class="row">
+        <div class="col-lg-6">
+        <table class="table table-bordered" style="position:relative;left:250px;">
+            {% for i in order %}
+            <tr colspan="2">
+            <td><img src="{{i.product.image.url}}" style="height:200px;width:250px;"></td>
+            <td>
+                <b>Address:{{i.address}}</b><br>
+                <b>Phone no:{{i.phone}}</b><br>
+                <b>Quantity:{{i.no_of_items}}</b><br>
+                <b>Order status:{{i.order_status}}</b><br>
+                <b>Delivery Status:<span class="text-danger">{{i.delivery_status}}</span></b><br>
+                <b>Date ordered:{{i.date_ordered}}</b><br>
+            </td>
+        </tr>
+            {% endfor %}
+        </table>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
